@@ -1,0 +1,21 @@
+<h1 style="text-align: center; color: darkslategray;"> Yarışan Oyuncu : {{player}}</h1>
+
+<div>
+    <nav>
+        <ul>
+            <li (click)="newGame()">
+                Yeni Oyun
+                <span></span><span></span><span></span><span></span>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+
+<h2 style="text-align: center;color: darkslategray;" *ngIf="winner">Player {{winner}} won game !</h2>
+
+<main>
+    <app-square *ngFor="let val of squares;let i=index" [value]="val" (click)="makeMove(i)">
+
+    </app-square>
+</main>
